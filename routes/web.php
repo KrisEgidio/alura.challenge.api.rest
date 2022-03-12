@@ -22,3 +22,9 @@ $router->get('/key', function() {
     return \Illuminate\Support\Str::random(32);
 });
 */
+
+$router->group(['prefix' => 'admin'], function () use ($router) {
+    $router->get('users', function () {
+        // Matches The "/admin/users" URL
+    });
+});
