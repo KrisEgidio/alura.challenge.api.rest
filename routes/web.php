@@ -23,8 +23,10 @@ $router->get('/key', function() {
 });
 */
 
-$router->group(['prefix' => 'admin'], function () use ($router) {
-    $router->get('users', function () {
-        // Matches The "/admin/users" URL
-    });
+$router->group(['prefix' => 'revenue'], function () use ($router) {
+    $router->get('/', 'RevenueController@index');
+    $router->get('/{id}', 'RevenueController@show');
+    $router->post('/', 'RevenueController@store');
+    $router->put('/{id}', 'RevenueController@update');
+    $router->delete('/{id}', 'RevenueController@destroy');
 });
